@@ -1,0 +1,33 @@
+{
+  "name": "ngx-editorjs-demo-e2e",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "sourceRoot": "apps/ngx-editorjs-demo-e2e/src",
+  "targets": {
+    "e2e": {
+      "executor": "@nx/cypress:cypress",
+      "options": {
+        "cypressConfig": "apps/ngx-editorjs-demo-e2e/cypress.config.ts",
+        "testingType": "e2e",
+        "devServerTarget": "ngx-editorjs-demo:serve:development"
+      },
+      "configurations": {
+        "production": {
+          "devServerTarget": "ngx-editorjs-demo:serve:production"
+        },
+        "ci": {
+          "devServerTarget": "ngx-editorjs-demo:serve-static"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/ngx-editorjs-demo-e2e/**/*.{js,ts}"]
+      }
+    }
+  },
+  "tags": [],
+  "implicitDependencies": ["ngx-editorjs-demo"]
+}
