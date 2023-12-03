@@ -9,7 +9,7 @@
     "components": [
         {
             "name": "AppComponent",
-            "id": "component-AppComponent-1b6339f4eb9c462590b0c80ca7a9a22603b6cbbb528a0291ffda02e976f647683990f3484c4df71bb18076c0e02be990f59d2f8ce0a9a8eda45e397b3a0f6552",
+            "id": "component-AppComponent-1d2f89e29202761d9f7975088742efae630bbfde7be06a60619d13dd955ce068eaece2b5c8d21ebc73b8bc4bd957dbcede0704fcddb4b061d08d092f43e4ad08",
             "file": "apps/ngx-editorjs-demo/src/app/app.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -21,7 +21,7 @@
             "styles": [
                 ""
             ],
-            "template": "<h1>Hello World from App</h1>\n<ngx-editorjs></ngx-editorjs>\n",
+            "template": "<h1>Hello World from App</h1>\n<ngx-editorjs></ngx-editorjs>\n<ngx-theme-picker></ngx-theme-picker>\n",
             "templateUrl": [],
             "viewProviders": [],
             "hostDirectives": [],
@@ -42,12 +42,16 @@
                 {
                     "name": "NgxEditorjsComponent",
                     "type": "component"
+                },
+                {
+                    "name": "NgxThemePickerComponent",
+                    "type": "component"
                 }
             ],
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\nimport { RouterModule } from '@angular/router';\n\nimport { NgxEditorjsComponent } from '@ngx-editorjs-labs/ngx-editorjs'\n\n@Component({\n  standalone: true,\n  imports: [RouterModule, NgxEditorjsComponent],\n  selector: 'demo-root',\n  template: `\n    <h1>Hello World from App</h1>\n    <ngx-editorjs></ngx-editorjs>\n  `,\n  styles: [``],\n})\nexport class AppComponent {\n\n}\n",
+            "sourceCode": "import { Component } from '@angular/core';\nimport { RouterModule } from '@angular/router';\n\nimport { NgxEditorjsComponent } from '@ngx-editorjs-labs/ngx-editorjs'\n\nimport { NgxThemePickerComponent } from '@tmdj/ngx-theme-picker';\n\n@Component({\n  standalone: true,\n  imports: [RouterModule, NgxEditorjsComponent, NgxThemePickerComponent],\n  selector: 'demo-root',\n  template: `\n    <h1>Hello World from App</h1>\n    <ngx-editorjs></ngx-editorjs>\n    <ngx-theme-picker></ngx-theme-picker>\n  `,\n  styles: [``],\n})\nexport class AppComponent {\n\n}\n",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "\n",

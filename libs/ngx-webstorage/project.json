@@ -1,0 +1,44 @@
+{
+  "name": "ngx-webstorage",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/ngx-webstorage/src",
+  "prefix": "ngx-editorjs-labs",
+  "tags": [],
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/angular:package",
+      "outputs": ["{workspaceRoot}/dist/{projectRoot}"],
+      "options": {
+        "project": "libs/ngx-webstorage/ng-package.json"
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "libs/ngx-webstorage/tsconfig.lib.prod.json"
+        },
+        "development": {
+          "tsConfig": "libs/ngx-webstorage/tsconfig.lib.json"
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "libs/ngx-webstorage/jest.config.ts"
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": [
+          "libs/ngx-webstorage/**/*.ts",
+          "libs/ngx-webstorage/**/*.html",
+          "libs/ngx-webstorage/package.json"
+        ]
+      }
+    }
+  }
+}

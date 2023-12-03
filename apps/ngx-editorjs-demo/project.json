@@ -8,19 +8,26 @@
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:browser",
-      "outputs": ["{options.outputPath}"],
+      "outputs": [
+        "{options.outputPath}"
+      ],
       "options": {
         "outputPath": "dist/apps/ngx-editorjs-demo",
         "index": "apps/ngx-editorjs-demo/src/index.html",
         "main": "apps/ngx-editorjs-demo/src/main.ts",
-        "polyfills": ["zone.js"],
+        "polyfills": [
+          "zone.js"
+        ],
         "tsConfig": "apps/ngx-editorjs-demo/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
         "assets": [
           "apps/ngx-editorjs-demo/src/favicon.ico",
           "apps/ngx-editorjs-demo/src/assets"
         ],
-        "styles": ["apps/ngx-editorjs-demo/src/styles.scss"],
+        "styles": [
+          "@angular/material/prebuilt-themes/indigo-pink.css",
+          "apps/ngx-editorjs-demo/src/styles.scss"
+        ],
         "scripts": []
       },
       "configurations": {
@@ -70,7 +77,9 @@
     },
     "lint": {
       "executor": "@nx/eslint:lint",
-      "outputs": ["{options.outputFile}"],
+      "outputs": [
+        "{options.outputFile}"
+      ],
       "options": {
         "lintFilePatterns": [
           "apps/ngx-editorjs-demo/**/*.ts",
@@ -80,7 +89,9 @@
     },
     "test": {
       "executor": "@nx/jest:jest",
-      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "outputs": [
+        "{workspaceRoot}/coverage/{projectRoot}"
+      ],
       "options": {
         "jestConfig": "apps/ngx-editorjs-demo/jest.config.ts"
       }
@@ -98,7 +109,12 @@
         "configDir": "apps/ngx-editorjs-demo/.storybook",
         "browserTarget": "ngx-editorjs-demo:build",
         "compodoc": true,
-        "compodocArgs": ["-e", "json", "-d", "apps/ngx-editorjs-demo"]
+        "compodocArgs": [
+          "-e",
+          "json",
+          "-d",
+          "apps/ngx-editorjs-demo"
+        ]
       },
       "configurations": {
         "ci": {
@@ -108,7 +124,9 @@
     },
     "build-storybook": {
       "executor": "@storybook/angular:build-storybook",
-      "outputs": ["{options.outputDir}"],
+      "outputs": [
+        "{options.outputDir}"
+      ],
       "options": {
         "outputDir": "dist/storybook/ngx-editorjs-demo",
         "configDir": "apps/ngx-editorjs-demo/.storybook",

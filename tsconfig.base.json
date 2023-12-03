@@ -15,7 +15,9 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@ngx-editorjs-labs/ngx-editorjs": ["libs/ngx-editorjs/src/index.ts"]
+      "@ngx-editorjs-labs/ngx-editorjs": ["libs/ngx-editorjs/src/index.ts"],
+      "@tmdj/ngx-theme-picker": ["libs/ngx-theme-picker/src/index.ts"],
+      "@tmdj/ngx-webstorage": ["libs/ngx-webstorage/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
