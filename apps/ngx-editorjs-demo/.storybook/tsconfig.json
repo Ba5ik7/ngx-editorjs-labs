@@ -1,0 +1,16 @@
+{
+  "extends": "../tsconfig.json",
+  "compilerOptions": {
+    "emitDecoratorMetadata": true,
+    "resolveJsonModule": true
+  },
+  "exclude": ["../**/*.spec.ts"],
+  "include": [
+    "../src/**/*.stories.ts",
+    "../src/**/*.component.ts",
+    "../../../libs/ngx-editorjs/src/lib/**/*.stories.ts",
+    "../../../libs/ngx-editorjs/src/lib/**/*.component.ts",
+    "*.js",
+    "*.ts"
+  ]
+}

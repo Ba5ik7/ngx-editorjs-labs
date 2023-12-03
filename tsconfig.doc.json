@@ -1,0 +1,11 @@
+{
+  "include": [
+    "libs/ngx-editorjs/src/**/*.ts",
+    "apps/ngx-editorjs-demo/src/**/*.ts"
+  ],
+  "exclude": [
+    "apps/ngx-editorjs-demo/src/test-setup.ts",
+    "libs/ngx-editorjs/src/test-setup.ts",
+    "src/**/*.spec.ts"
+  ]
+}

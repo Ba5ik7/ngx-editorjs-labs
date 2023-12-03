@@ -90,6 +90,54 @@
       "options": {
         "buildTarget": "ngx-editorjs-demo:build"
       }
+    },
+    "storybook": {
+      "executor": "@storybook/angular:start-storybook",
+      "options": {
+        "port": 4400,
+        "configDir": "apps/ngx-editorjs-demo/.storybook",
+        "browserTarget": "ngx-editorjs-demo:build",
+        "compodoc": true,
+        "compodocArgs": ["-e", "json", "-d", "apps/ngx-editorjs-demo"]
+      },
+      "configurations": {
+        "ci": {
+          "quiet": true
+        }
+      }
+    },
+    "build-storybook": {
+      "executor": "@storybook/angular:build-storybook",
+      "outputs": ["{options.outputDir}"],
+      "options": {
+        "outputDir": "dist/storybook/ngx-editorjs-demo",
+        "configDir": "apps/ngx-editorjs-demo/.storybook",
+        "browserTarget": "ngx-editorjs-demo:build",
+        "compodoc": false
+      },
+      "configurations": {
+        "ci": {
+          "quiet": true
+        }
+      }
+    },
+    "test-storybook": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "test-storybook -c apps/ngx-editorjs-demo/.storybook --url=http://localhost:4400"
+      }
+    },
+    "static-storybook": {
+      "executor": "@nx/web:file-server",
+      "options": {
+        "buildTarget": "ngx-editorjs-demo:build-storybook",
+        "staticFilePath": "dist/storybook/ngx-editorjs-demo"
+      },
+      "configurations": {
+        "ci": {
+          "buildTarget": "ngx-editorjs-demo:build-storybook:ci"
+        }
+      }
     }
   }
 }
